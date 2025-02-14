@@ -19,9 +19,9 @@ class EnvConfig:
         self._loaded = True
 
     @property
-    def OPENAI_COMPATIBLE_API_KEY(self) -> str:
+    def OPENAI_API_KEY(self) -> str:
         self._ensure_loaded()
-        return os.getenv("OPENAI_COMPATIBLE_API_KEY")
+        return os.getenv("OPENAI_API_KEY")
 
     @property
     def JWT_SECRET_KEY(self) -> str:
@@ -66,6 +66,15 @@ class EnvConfig:
     def BACKEND_HOST(self) -> str:
         self._ensure_loaded()
         return os.getenv("BACKEND_HOST")
+    
+    @property
+    def REFRESH_TOKEN_EXPIRE_DAYS(self) -> int:
+        self._ensure_loaded()
+        try:
+            days = int(os.getenv("REFRESH_TOKEN_EXPIRE_DAYS"))
+            return days
+        except ValueError:
+            raise ValueError("REFRESH_TOKEN_EXPIRE_DAYS must be an integer")
     
     
     @staticmethod
