@@ -1,5 +1,5 @@
 import logging
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 from dotenv import load_dotenv
 import os
 
@@ -7,7 +7,7 @@ import os
 class EnvConfig:
     def __init__(self):
         self._loaded = False
-        self.SCRIPT_ROOT_DIR = None
+        self.SCRIPT_ROOT_DIR: Optional[str] = None
 
     def _ensure_loaded(self):
         if not self._loaded:
@@ -55,18 +55,18 @@ class EnvConfig:
             return port
         except ValueError:
             raise ValueError("BACKEND_PORT must be an integer")
-        
+
     @property
     def CORS_ORIGINS(self) -> List[str]:
         self._ensure_loaded()
         cors_str = os.getenv("CORS_ORIGINS")
         return EnvConfig._parse_cors(cors_str)
-    
+
     @property
     def BACKEND_HOST(self) -> str:
         self._ensure_loaded()
         return os.getenv("BACKEND_HOST")
-    
+
     @property
     def REFRESH_TOKEN_EXPIRE_DAYS(self) -> int:
         self._ensure_loaded()
@@ -75,8 +75,7 @@ class EnvConfig:
             return days
         except ValueError:
             raise ValueError("REFRESH_TOKEN_EXPIRE_DAYS must be an integer")
-    
-    
+
     @staticmethod
     def _parse_cors(v: Any) -> list[str] | str:
         if isinstance(v, str) and not v.startswith("["):
@@ -84,5 +83,6 @@ class EnvConfig:
         elif isinstance(v, list | str):
             return v
         raise ValueError(v)
+
 
 ENV_CONFIG = EnvConfig()
