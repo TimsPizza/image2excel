@@ -4,7 +4,7 @@ from fastapi import FastAPI
 import uvicorn
 
 from app.core.config import ENV_CONFIG
-from app.routes import auth_router, files_router
+from app.routes import auth_router, files_router, tasks_router
 from starlette.middleware.cors import CORSMiddleware
 
 # Set the SCRIPT_ROOT_DIR property of ENV_CONFIG to the directory of the main.py file
@@ -25,6 +25,7 @@ app = FastAPI(lifespan=lifespan)
 
 app.include_router(files_router) 
 app.include_router(auth_router)
+app.include_router(tasks_router)
 if ENV_CONFIG.CORS_ORIGINS:
     app.add_middleware(
         CORSMiddleware,

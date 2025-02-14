@@ -3,7 +3,6 @@ from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, Request
 from app.dtos.AuthDTO import (
     AuthRequestDTO,
     AuthResponseDTO,
-    RefreshTokenRequestDTO,
     RefreshTokenResponseDTO,
 )
 from app.services.AuthService import AuthService
@@ -33,6 +32,8 @@ async def access_token(request: Request, formData: AuthRequestDTO):
         raise HTTPException(status_code=400, detail=str(e))
 
 
+# TODO: Add timestamp to user_records when creating a new refresh token,
+# and add a check to invalidate refresh tokens after a certain time period in the corresponding service method.
 @router.post("/refresh", response_model=RefreshTokenResponseDTO)
 async def refresh_token(request: Request):
     auth_header = request.headers.get("Authorization")
