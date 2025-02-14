@@ -5,4 +5,4 @@ class AuthRequestDTO(BaseModel):
     totp: str
     
 class AuthResponseDTO(BaseModel):
-    token: str    
+    access_token: str    

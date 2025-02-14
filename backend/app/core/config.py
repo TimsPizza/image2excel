@@ -7,6 +7,7 @@ import os
 class EnvConfig:
     def __init__(self):
         self._loaded = False
+        self.SCRIPT_ROOT_DIR = None
 
     def _ensure_loaded(self):
         if not self._loaded:
@@ -33,9 +34,13 @@ class EnvConfig:
         return os.getenv("JWT_ALGORITHM")
 
     @property
-    def JWT_EXPIRE_MINUTES(self) -> str:
+    def JWT_EXPIRE_MINUTES(self) -> int:
         self._ensure_loaded()
-        return os.getenv("JWT_EXPIRE_MINUTES")
+        try:
+            minutes = int(os.getenv("JWT_EXPIRE_MINUTES"))
+            return minutes
+        except ValueError:
+            raise ValueError("JWT_EXPIRE_MINUTES must be an integer")
 
     @property
     def TOTP_SECRET_KEY(self) -> str:
@@ -43,10 +48,14 @@ class EnvConfig:
         return os.getenv("TOTP_SECRET_KEY")
 
     @property
-    def BACKEND_PORT(self) -> str:
+    def BACKEND_PORT(self) -> int:
         self._ensure_loaded()
-        return os.getenv("BACKEND_PORT")
-
+        try:
+            port = int(os.getenv("BACKEND_PORT"))
+            return port
+        except ValueError:
+            raise ValueError("BACKEND_PORT must be an integer")
+        
     @property
     def CORS_ORIGINS(self) -> List[str]:
         self._ensure_loaded()
@@ -57,6 +66,7 @@ class EnvConfig:
     def BACKEND_HOST(self) -> str:
         self._ensure_loaded()
         return os.getenv("BACKEND_HOST")
+    
     
     @staticmethod
     def _parse_cors(v: Any) -> list[str] | str:
