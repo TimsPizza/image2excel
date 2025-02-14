@@ -594,6 +594,82 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.24.0.tgz#0574d7e87b44ee8511d08cc7f914bcb802b70818"
   integrity sha512-fbMkAF7fufku0N2dE5TBXcNlg0pt0cJue4xBRE2Qc5Vqikxr4VCgKj/ht6SMdFcOacVA9rqF70APJ8RN/4vMJw==
 
+"@rpldy/abort@^1.9.1":
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@rpldy/abort/-/abort-1.9.1.tgz#75f5e8a1cf985b8839fad751f60f52cdbc710209"
+  integrity sha512-XKN5LcNPo/ksFqZoEWn/o9ciJyYooVINJv/PuTtzQHDnPG9jHpxEB+h1vkn0Mjan4r35PuC4TxhDv0d9RykDTw==
+  dependencies:
+    "@rpldy/raw-uploader" "^1.9.1"
+    "@rpldy/shared" "^1.9.1"
+    "@rpldy/simple-state" "^1.9.1"
+
+"@rpldy/life-events@1.9.1", "@rpldy/life-events@^1.9.1":
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@rpldy/life-events/-/life-events-1.9.1.tgz#e115437523990614c0e0adc1b542ef4c8673b060"
+  integrity sha512-dxzeUFWGM+g/1Bv3ClDIb62bl4zvoEM2Ydksou2qZi9yKOqBP53Ymd0DQcZvBp0W+QALXX+TzSGt7Ew70oJ+Ww==
+  dependencies:
+    "@rpldy/shared" "^1.9.1"
+
+"@rpldy/raw-uploader@^1.9.1":
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@rpldy/raw-uploader/-/raw-uploader-1.9.1.tgz#fed822645f5e1908bff019c848d0293792e84dae"
+  integrity sha512-4q4kkC5HugYs+b/I8shsBY/rKoLrrKgrw3Y1FKvs0EjkCeWMo6OP9bOf3WSdIPp7d5eOWGRragP2tgSdKNtXjQ==
+  dependencies:
+    "@rpldy/life-events" "^1.9.1"
+    "@rpldy/shared" "^1.9.1"
+
+"@rpldy/sender@^1.9.1":
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@rpldy/sender/-/sender-1.9.1.tgz#7106690f1fe1284bd1d147c37f9d3167c2921c00"
+  integrity sha512-kdTukDMveYwXuF0AxQrvpEBlR3PXn5p1q17/CmEvIsHcsaEl4SO7InTKF+uMRF2vFyE+/UFUqpGwNxJ0NEuS1Q==
+  dependencies:
+    "@rpldy/shared" "^1.9.1"
+
+"@rpldy/shared-ui@1.9.1":
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@rpldy/shared-ui/-/shared-ui-1.9.1.tgz#8c301431ffb12673b0afb2194eb9f8fa74842069"
+  integrity sha512-rGF+Fcof+/6wwzQxsli90EcAwSD5ppjIHJu6sg2QtVd2yncSUf08eHN+xzL8hn8esKUU71Bx7/rdFY25J7UWQw==
+  dependencies:
+    "@rpldy/shared" "1.9.1"
+    "@rpldy/uploader" "1.9.1"
+
+"@rpldy/shared@1.9.1", "@rpldy/shared@^1.9.1":
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@rpldy/shared/-/shared-1.9.1.tgz#aab70cef38b807616991383db06ecf59e133f665"
+  integrity sha512-tMgBNGLV2qdsnjwAK5/RJHCz/+vZN2Z2Cpp0a0bVRrCbZbFwzr5qye9AgzhA1+PqG8n+vvvbS8FdMVUk/FYS7g==
+  dependencies:
+    invariant "^2.2.4"
+    just-throttle "^4.2.0"
+
+"@rpldy/simple-state@^1.9.1":
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@rpldy/simple-state/-/simple-state-1.9.1.tgz#bd24e39186e19ffdba0fc983c2c7cc793ab2098c"
+  integrity sha512-Ob5OzBKlySWyvHD/PD0PH+UiZ8KpvaktxgLdohgNbs6svZc/sTK5hdURo5xhDIMBs8znKexr1TdiD5LDL93ZJA==
+  dependencies:
+    "@rpldy/shared" "^1.9.1"
+
+"@rpldy/uploader@1.9.1":
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@rpldy/uploader/-/uploader-1.9.1.tgz#6b31370d7ab944d7422dde05e777f595fbd1e5de"
+  integrity sha512-dMhGBL03iWlidml+1wKQUJNcSqnazBbGdAWLW/ySc7VMM0XIUsNHJ9dNHTNjj5YR/U+9nRoYVR+mn2Sc5i0J3w==
+  dependencies:
+    "@rpldy/abort" "^1.9.1"
+    "@rpldy/life-events" "^1.9.1"
+    "@rpldy/raw-uploader" "^1.9.1"
+    "@rpldy/sender" "^1.9.1"
+    "@rpldy/shared" "^1.9.1"
+    "@rpldy/simple-state" "^1.9.1"
+
+"@rpldy/uploady@^1.9.1":
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@rpldy/uploady/-/uploady-1.9.1.tgz#d2fa24d56407cd5e0cea39975e814dca72dfa6df"
+  integrity sha512-8ygPQccR2Xqq00gY8uIVeD7WNNeb3T2bq4OKpjOkBvnI2pE436Rk6q1GYU4H9Q1PAvnGHV2ICS7555K0xU75cw==
+  dependencies:
+    "@rpldy/life-events" "1.9.1"
+    "@rpldy/shared" "1.9.1"
+    "@rpldy/shared-ui" "1.9.1"
+    "@rpldy/uploader" "1.9.1"
+
 "@swc/helpers@^0.5.0":
   version "0.5.13"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.5.13.tgz#33e63ff3cd0cade557672bd7888a39ce7d115a8c"
@@ -1647,6 +1723,11 @@ json5@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
+
+just-throttle@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/just-throttle/-/just-throttle-4.2.0.tgz#5a22da10a4bdb906d2583400eff2fe3fbd9f9662"
+  integrity sha512-/iAZv1953JcExpvsywaPKjSzfTiCLqeguUTE6+VmK15mOcwxBx7/FHrVvS4WEErMR03TRazH8kcBSHqMagYIYg==
 
 keyv@^4.5.4:
   version "4.5.4"

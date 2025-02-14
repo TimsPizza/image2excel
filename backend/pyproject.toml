@@ -10,6 +10,10 @@ python = "3.10.12"
 fastapi = "^0.115.8"
 uvicorn = "^0.34.0"
 openai = "^1.63.0"
+python-jose = "^3.3.0"
+python-dotenv = "^1.0.1"
+pyotp = "^2.9.0"
+starlette = "^0.45.3"
 
 
 [build-system]
